@@ -1,101 +1,89 @@
-# FastAPI To-Do Application (CRUD with Authentication & Authorization)
+# FastAPI Todo CRUD App
 
-This repository contains a **FastAPI-based To-Do application** developed as a technical task.  
-The project demonstrates **CRUD operations**, **authentication**, and **authorization** using FastAPI.
+A simple and clean **Todo CRUD REST API** built using **FastAPI**, **SQLAlchemy**, and **SQLite**.  
+This project demonstrates backend fundamentals including API design, database integration, and request/response validation.
 
 
 ## 🚀 Features
 
-- User Authentication (Login)
-- Token-based Authorization
-- CRUD Operations:
-  - Create To-Do
-  - Read To-Dos
-  - Update To-Do
-  - Delete To-Do
-- FastAPI with Swagger UI
-- Input validation using Pydantic
-- In-memory data storage (no database)
-- No Machine Learning models used
+- Create, Read, and Delete Todos
+- FastAPI automatic Swagger documentation
+- SQLite database with SQLAlchemy ORM
+- Clean project structure (industry-style)
+- Pydantic schemas for validation
+- Persistent data storage
 
-## 🛠️ Tech Stack
-- Python 3
-- FastAPI
-- Uvicorn
-- Pydantic
+
+## 🛠 Tech Stack
+
+- **Python 3.13**
+- **FastAPI**
+- **SQLAlchemy**
+- **SQLite**
+- **Uvicorn**
+
 
 ## 📂 Project Structure
-  fastapi-todo-crud-auth/
+fastAPI-todo-app/
 │
-├── main.py
+├── app/
+│ ├── init.py
+│ ├── main.py
+│ ├── database.py
+│ ├── models.py
+│ ├── schemas.py
+│ └── routers/
+│ ├── init.py
+│ └── todo.py
+│
+├── todo.db
+├── requirements.txt
 └── README.md
 
 
+## ⚙️ Installation & Setup
 
-## ▶️ How to Run the Project
-
-### 1. Clone the repository
+### 1️⃣ Clone the repository
 
 git clone https://github.com/ktabasum1999-wq/fastapi-todo-crud-auth.git
 cd fastapi-todo-crud-auth
-
 Install dependencies
-python -m pip install fastapi uvicorn python-multipart
-3. Run the application
-bash
-Copy code
-python -m uvicorn main:app --reload
-API Documentation
+pip install fastapi uvicorn sqlalchemy
+Run the application
+python -m uvicorn app.main:app --reload
 
-After running the server, open the following URL in your browser:
+API Documentation (Swagger)
+
+After running the server, open your browser:
 
 http://127.0.0.1:8000/docs
-
-
-This opens the Swagger UI where all endpoints can be tested.
-
- Authentication & Authorization
-Login Credentials (for testing)
-
-Username: admin
-
-Password: admin123
-
-Steps:
-
-Use POST /login to authenticate
-
-Copy the access token
-
-Click Authorize in Swagger UI
-Paste:
-
-Bearer my-secret-token
-
-
-Access all CRUD endpoints
 API Endpoints
-Method	Endpoint	Description
-POST	/login	User login
-POST	/todos	Create a todo
-GET	/todos	Get all todos
-PUT	/todos/{todo_id}	Update a todo
-DELETE	/todos/{todo_id}	Delete a todo
+➕ Create Todo
 
-(All /todos endpoints require authorization)
-Notes
+POST /todos
 
-This project focuses purely on backend logic and API design
+{
+  "title": "Learn FastAPI",
+  "description": "CRUD project for interview"
+}
 
-No frontend and no database are used
+📄 Get All Todos
+GET /todos
 
-Data is stored in memory for simplicity
+❌ Delete Todo
 
- Author
+DELETE /todos/{todo_id}
 
-TABASUM Khan
-Python / FastAPI Developer
+✅ Sample Response
+{
+  "id": 1,
+  "title": "Learn FastAPI",
+  "description": "CRUD project for interview",
+  "completed": false
+}
+Author
 
-
-
+Tabasum Khan
+Aspiring Backend / AI Engineer
+GitHub: https://github.com/ktabasum1999-wq
 
