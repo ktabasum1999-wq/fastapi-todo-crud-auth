@@ -86,4 +86,28 @@ Author
 Tabasum Khan
 Aspiring Backend / AI Engineer
 GitHub: https://github.com/ktabasum1999-wq
+Notes
+
+This project is built for learning and interview demonstration purposes.
+Future improvements may include authentication (JWT), update endpoints, and testing.
+
+
+---
+
+# ✅ PART 2: HOW GITHUB TRACKS NEW FILES & FOLDERS (VERY IMPORTANT)
+
+### 🔴 Short answer:
+👉 **NO extra linking is required**  
+👉 **GitHub automatically tracks new files & folders**
+
+You **do NOT** need to relink your repository.
+
+---
+
+## 🧠 How Git REALLY works (simple explanation)
+
+You already did:
+```bash
+git init
+git remote add origin <repo-url>
 
